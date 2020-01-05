@@ -1,0 +1,25 @@
+<div class="main">
+	<div class="form">
+		<div class="form-body">
+			　　 <h1>投稿詳細</h1>
+			<% if @post['hunt_img'].include?("MP4")  %>
+			<video src="/img/posts_img/<%= @post['hunt_img'].force_encoding("utf-8") %>" controls></video>
+			<% else %>
+			<img src="/img/posts_img/<%= @post['hunt_img'].force_encoding("utf-8") %>">
+			<% end %>
+			<h2> <%= @post['name'].force_encoding("utf-8") %>さん </h2>
+			<label for="kind">魚の種類</label>
+			<h3> <%= @post['kind'].force_encoding("utf-8") %> </h3>
+			<label for="length">魚の体長</label>
+			<h3> <%= @post['length'].force_encoding("utf-8") %>cm </h3>
+			<label for="length">魚の体重</label>
+			<h3> <%= @post['weight'].force_encoding("utf-8") %>kg </h3>
+			<label for="length">ポイント</label>
+			<h3> <%= @post['point'].force_encoding("utf-8") %> </h3>
+			<label for="length">詳細</label>
+			<p> <%= @post['detail'].force_encoding("utf-8") %> </p>
+
+			　
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+
+<div class = "main">
+<div class="form">
+  <div class="form-body">
+    <h1>投稿する</h1>
+    <form action = "/new" method = "POST" enctype = "multipart/form-data">
+
+    <label for = "hunt_img">釣果画像</label>
+    <input type="file" name="hunt_img">
+
+    <label for = "kind">魚種</label>
+    <input type = "text" name = "kind">
+
+    <label for = "length">魚の体長</label>
+    <input type = "number" step = "0.01" name = "length"><span>cm</span>
+
+    <label for = "weight">魚の体重</label>
+    <input type = "number" step = "0.01" name = "weight"><span>kg</span>
+
+    <label for = "point">ポイント</label>
+    <input type = "text" name = "point">
+
+    <label for = "detail">詳細</label>
+    <textarea name = "detail" rows = "4" cols = "26" placeholder = "仕掛け、感想など"></textarea>
+
+    <input type="submit" value="投稿">
+
+  </div>
+</div>
+</div>
+

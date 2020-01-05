@@ -1,0 +1,35 @@
+<div class = "top-main">
+  <h1>釣りのマナーを考えよう！</h1>
+  <div class = "new_warn">
+    <a href = "/new_warn">warnする</a>
+
+  </div>
+
+  <div class="warn-index">
+<% @warnings.each do |warning| %>
+    <div class="warn-container">
+      <h1>  
+        <%= warning['point'].force_encoding("utf-8") %>
+      </h1>
+
+      <p>
+        <%= warning['reason'].force_encoding("utf-8") %> 
+      </p>
+    </div>
+<% end %>
+  </div>
+
+
+  <div class = "warn_count">
+    <h1>warn数</h1>
+<% @warn_counts.each do |warn_count|%>
+    <div class = "warn_point">
+
+      <p> <%= warn_count['point'].force_encoding("utf-8") %> </p>
+      <h2> <%= warn_count['count'].force_encoding("utf-8") %> </h2>
+    </div>
+<% end %>
+  </div>
+</div>
+
+

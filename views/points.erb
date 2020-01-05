@@ -1,0 +1,30 @@
+<div class="main top-main">
+
+  <div class="points_index">
+    <div class="search">
+      <form action="/place_search" method="GET">
+        <div class="search_word">
+
+          <input name="search" type="text" placeholder="キーワードを入力">
+          <button class="btn btn-warning" type="submit">検索</button>
+
+        </div>
+    </div>
+    <% @points.each do |point| %>
+    <div class="container">
+      <h1>
+        <%= point['point'] %>
+      </h1>
+
+      <h3>魚種</h3>
+      <!-- <% if point['kind'].count > 1 %> -->
+      <ul class="kinds">
+        <li>
+          <%= point['kind'] %>
+        </li>
+      </ul>
+    </div>
+    <% end %>
+
+  </div>
+</div>

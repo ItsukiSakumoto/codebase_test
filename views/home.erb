@@ -1,0 +1,66 @@
+<div class="main top-main">
+  <div class="top-message">
+    <h2>今日の獲物</h2>
+    <p>次はどこで釣る？</p>
+
+    <div class="search">
+      <form action="/search_word" method="GET">
+        <div class="search_word">
+
+          <input name="search" type="text" placeholder="キーワードを入力">
+          <button class="btn btn-warning" type="submit">検索</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="posts-index-item">
+
+  <% @posts.each do |post| %>
+  <div class="container">
+
+    <% if post['hunt_img'].include?("MP4") %>
+    <video src="/img/posts_img/<%= post['hunt_img'].force_encoding("utf-8") %>" controls></video>
+    <% else %>
+    <img src="/img/posts_img/<%= post['hunt_img'].force_encoding("utf-8") %>">
+    <% end %>
+    <div class="name">
+      <label for="fisherman">釣人：</label>
+      <p> <%= post['name'].force_encoding("utf-8") %> <span>さん</span></p>
+    </div>
+    <!-- <div class="kind"> -->
+      <p> <%= post['kind'].force_encoding("utf-8") %> </p>
+    <!-- </div> -->
+    <p class = "detail"> <%= post['detail'].force_encoding("utf-8") %> </p>
+    <!-- <div class="detail"> -->
+      <a href="/individual/<%= post['id'] %>" class="individual">詳細</a>
+
+
+      <% if @likes.include?(post['id'].to_i) %>
+      <form action="/dislike" method="POST">
+        <input type="hidden" name="id" value="<%= post['id'] %>">
+        <button type="submit" class="like"><i class="fas fa-thumbs-up"></i></button>
+      </form>
+      <% else %>
+      <form action="/like" method="POST">
+        <input type="hidden" name="id" value="<%= post['id'] %>">
+        <button type="submit" class="like"><i class="far fa-thumbs-up"></i></button>
+
+      </form>
+    <!-- </div> -->
+    <% end %>
+
+  </div>
+
+
+
+  <% end %>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+
+</script>

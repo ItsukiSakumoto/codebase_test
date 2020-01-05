@@ -1,0 +1,16 @@
+<div class="main top-main">
+  <div class="top-message">
+  　<h1>検索結果</h1>
+
+    <div class="posts-index-item">
+
+<% @place_searches.each do |search| %>
+      <div class = "container">
+      <h1> <%= search['point'].force_encoding("utf-8") %></h1>
+      <p> <%= search['kind'].force_encoding("utf-8") %> </p>
+      </div>
+<% end %>
+    </div>  
+  </div>
+
+</div> 

@@ -1,0 +1,23 @@
+<div class="main top-main">
+  <div class="top-message">
+  　<h1>検索結果</h1>
+
+    <div class="posts-index-item">
+
+<% @searches.each do |search| %>
+      <div class = "container">
+<% if search['hunt_img'].include?("MP4")  %>
+      <video src = "/img/posts_img/<%= search['hunt_img'].force_encoding("utf-8") %>" controls></video>
+<% else %>
+      <img src="/img/posts_img/<%= search['hunt_img'].force_encoding("utf-8") %>">
+<% end %>
+      <p> <%= search['name'].force_encoding("utf-8") %>さん </p>
+      <p> <%= search['kind'].force_encoding("utf-8") %> </p>
+      <p class = "detail"> <%= search['detail'].force_encoding("utf-8") %> </p>
+      <a href ="/individual/<%= search['id']%>">詳細</a>
+      </div>
+    </div>  
+  </div>
+<% end %>
+
+</div> 

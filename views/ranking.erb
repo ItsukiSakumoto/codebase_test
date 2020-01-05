@@ -1,0 +1,17 @@
+
+  <div class="posts-index-item">
+
+<% @ranks.each do |rank| %>
+    <div class = "container">
+      <p> <%= rank['point'].force_encoding("utf-8") %> </p>
+      <p> <%= rank['name'].force_encoding("utf-8") %>さん </p>
+      <p> <%= rank['kind'].force_encoding("utf-8") %> </p>
+    </div>
+
+
+
+<% end %>
+
+  </div>
+
+</div>
